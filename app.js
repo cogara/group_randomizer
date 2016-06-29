@@ -1,6 +1,7 @@
 $(function() {
   var arrayOfNames = [];
   var groupArray = [];
+
   function addPerson(name) {
     arrayOfNames.push(name);
   }
@@ -14,7 +15,7 @@ $(function() {
   addPerson('ghi');
   addPerson('jkl');
 
-
+  //randomizes array of names in a different order
   function shuffle(array) {
     var currentIndex = array.length, temporaryValue, randomIndex;
     // While there remain elements to shuffle...
@@ -32,8 +33,7 @@ $(function() {
       return array;
   }
 
-  // console.log($('.button').parent().find('.selected').attr('id'));
-
+  //randomized groups, then sorts into number of groups determined
   function sortGroups(numGroups) {
     var tempArrayOfNames = [];
     for (var i = 0; i < arrayOfNames.length; i++) {
@@ -55,14 +55,15 @@ $(function() {
     return groupArray;
   }
 
-
+  // selects a button for # of groups
   $('.num-group-buttons').on('click','.button',function() {
     $('.button').removeClass('selected');
     $(this).addClass('selected');
   })
 
+  //determines what number of groups is needed, and sorts groups and appends html
   $('#randomize-button').on('click',function(){
-    // console.log($('.num-group-buttons').find('.selected').attr('id'));
+    // switch to determine what button was selected
     switch ($('.num-group-buttons').find('.selected').attr('id')) {
       case 'group-2':
         sortGroups(2);
@@ -74,53 +75,50 @@ $(function() {
         break;
       case 'group-4':
         sortGroups(4);
+        addDivs(4);
         break;
       case 'group-5':
         sortGroups(5);
+        addDivs(5);
         break;
       case 'group-6':
         sortGroups(6);
+        addDivs(6);
         break;
       case 'group-7':
         sortGroups(7);
+        addDivs(7);
         break;
       case 'group-8':
         sortGroups(8);
+        addDivs(8);
         break;
       case 'group-9':
         sortGroups(9);
+        addDivs(9);
         break;
       case 'group-10':
         sortGroups(10);
+        addDivs(10);
         break;
     }
-    console.log(groupArray);
 
+    //appending array to proper group div id
     for (var i = 0; i < groupArray.length; i++) {
       for (var j = 0; j < groupArray[i].length; j++) {
-        console.log(groupArray[i][j]);
-        $('.groups').find('#group'+(i+1)).append(groupArray[i][j] + ' ');
+        $('.groups').find('#group'+(i+1)).append(groupArray[i][j] + ', ');
       }
     }
 
+  }) //end of randomize button
 
-
-  })
-
+  //appends divs to DOM based on number of groups
   function addDivs(numGroups) {
     $('.groups').empty();
     for (var i = 1; i <= numGroups; i++) {
       $('.groups').append('<div class="group" id="group' + i + '"></div>');
     }
   }
-
-  for (var i = 0; i < groupArray.length; i++) {
-    for (var j = 0; j < groupArray[i].length; j++) {
-      console.log(groupArray[i][j]);
-      $('.groups').append(groupArray[i][j]);
-    }
-  }
-
 
 
 })
