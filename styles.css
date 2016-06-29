@@ -1,0 +1,42 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  min-width: 600px;
+  margin: 10px auto;
+  background-color: grey;
+  padding: 5px;
+}
+.num-group-buttons {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.button {
+  display: inline-block;
+  width: 9%;
+  margin: 2px;
+  padding: 5px;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+
+.randomizer {
+  text-align: center;
+  padding: 10px;
+  width: 25%;
+  margin: 0 auto;
+  border: 1px solid white;
+}
+
+.selected {
+  background-color: #DDD;
+}
+
+.groups div {
+  padding: 10px;
+  border: 1px solid red;
+}
