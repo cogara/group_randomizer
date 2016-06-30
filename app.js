@@ -105,14 +105,16 @@ $(function() {
 
     //appending array to proper group div id
     for (var i = 0; i < groupArray.length; i++) {
-      $('.groups').find('#group'+(i+1)).append('<ul class="group-list">');
+      $('.groups').find('#group'+(i+1)).append('<ul class="group-list"></ul>');
       for (var j = 0; j < groupArray[i].length; j++) {
-        $('.groups').find('#group'+(i+1)).append('<li>' + groupArray[i][j] + '</li>');
+        $('.groups').find('#group'+(i+1)).find('ul').append('<li>' + groupArray[i][j] + '</li>');
       }
-      $('.groups').find('#group'+(i+1)).append('</ul>');
     }
 
-  }) //end of randomize button
+
+
+    $('.group').animate({left: "0", top: '0'}, 1000);
+  }) //end of randomize button click event
 
   //appends divs to DOM based on number of groups
   function addDivs(numGroups) {
@@ -121,6 +123,10 @@ $(function() {
       $('.groups').append('<div class="group" id="group' + i + '"><h1 id="groupnum' + i + '">Group ' + i + '</h1></div>');
     }
   }
+  //
+  // $('.container').on('click', function () {
+  //   $('.group').animate({left: "0", top: '0'}, 1000);
+  // })
 
 
 })

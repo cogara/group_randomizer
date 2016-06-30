@@ -8,7 +8,7 @@
   width: 95%;
   /*min-width: 600px;*/
   margin: 10px auto;
-  background-color: grey;
+  /*background-color: grey;*/
   padding: 5px;
 }
 .num-group-buttons {
@@ -22,17 +22,21 @@
   /*width: 9%;*/
   margin: 2px;
   padding: 5px;
-  border: 1px solid white;
-  border-radius: 5px;
   flex: 1 auto;
-  box-shadow: 3px 3px 1px 1px black;
+
 }
 
-.button.selected {
+.button.selected, .randomizer:active {
   position: relative;
   top: 2px;
   left: 2px;
   box-shadow: 1px 1px 1px 1px black;
+}
+
+.button, .randomizer {
+  box-shadow: 3px 3px 1px 1px black;
+  border-radius: 5px;
+  border: 1px solid rgba(0,0,0,.2);
 }
 
 .randomizer {
@@ -40,7 +44,6 @@
   padding: 10px;
   width: 25%;
   margin: 10px auto;
-  border: 1px solid white;
 }
 
 .selected {
@@ -49,7 +52,6 @@
 
 .groups div {
   padding: 10px;
-  border: 1px solid red;
 }
 
 .groups {
@@ -62,6 +64,8 @@
   margin: 5px;
   flex: 0 150px;
   text-align: center;
+  border-radius: 10px;
+  background-color: rgba(200,200,200,.5);
 }
 
 
@@ -74,4 +78,70 @@
 
 .group li {
   text-align: left;
+  margin-left: 15px;
+}
+
+.group ul {
+  margin: 10px 0 5px;
+}
+
+.group:first-child {
+  position: relative;
+  left: -9999px;
+  top: -9999px;
+}
+
+.group:nth-child(2) {
+  position: relative;
+  left: -1999px;
+  top: -1999px;
+}
+
+.group:nth-child(3) {
+  position: relative;
+  left: 0px;
+  top: 9999px;
+}
+
+.group:nth-child(4) {
+  position: relative;
+  left: 9999px;
+  top: 9999px;
+}
+
+
+.group:nth-child(5) {
+  position: relative;
+  left: -9999px;
+  top: 0;
+}
+
+.group:nth-child(6) {
+  position: relative;
+  left: -9999px;
+  top: 9999px;
+}
+
+.group:nth-child(7) {
+  position: relative;
+  left: -5555px;
+  top: -5555px;
+}
+
+.group:nth-child(8) {
+  position: relative;
+  left: -400px;
+  top: 5555px;
+}
+
+.group:nth-child(9) {
+  position: relative;
+  left: 400px;
+  top: 5555px;
+}
+
+.group:nth-child(10) {
+  position: relative;
+  left: 9999px;
+  top: -5000px;
 }
