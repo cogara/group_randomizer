@@ -6,6 +6,7 @@ $(function() {
     arrayOfNames.push(name);
   }
 
+  //added people
   addPerson('Connor');
   addPerson('Brian V');
   addPerson('Donovan');
@@ -25,7 +26,6 @@ $(function() {
   addPerson('Trent');
   addPerson('Anthony');
   addPerson('Katie');
-
 
 
   // selects a button for # of groups
@@ -102,8 +102,10 @@ $(function() {
       groupArray[i] = [];
     }
 
+    //while loop checks to be sure after each pass through placing names, there are more names to be placed into groups
     while (tempArrayOfNames.length > 0) {
       for (var i = 0; i < numGroups; i++) {
+        //checks to be sure mid while loop that there are still names to be placed
         if (tempArrayOfNames.length > 0) {
           groupArray[i].push(tempArrayOfNames.shift());
         }
