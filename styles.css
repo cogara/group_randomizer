@@ -69,14 +69,15 @@ body {
 .groups {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
 }
 
 .group {
-  margin: 5px;
+  margin: 5px auto;
   flex: 0 150px;
   text-align: center;
   border-radius: 10px;
+  border: 5px solid rgba(255,255,255,.5);
   background-color: rgba(200,200,200,.85);
 }
 

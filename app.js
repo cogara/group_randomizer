@@ -1,7 +1,7 @@
 $(function() {
   var arrayOfNames = [];
   var groupArray = [];
-  var animalNames = ['Lion','Elephant','Tiger','Juggler','Trapeezer','Clown','Sad Clown','Monkey','Ring Master','Lion Tamer','Skeletor','Lion','Elephant','Tiger','Juggler','Trapeezer','Clown','Sad Clown','Monkey','Ring Master','Lion Tamer'];
+  var animalNames = ['Lion','Elephant','Tiger','Juggler','Trapeezer','Clown','Sad Clown','Monkey','Ring Master','Lion Tamer','Skeletor'];
   var randomAnimal = [];
 
   function addPerson(name) {
