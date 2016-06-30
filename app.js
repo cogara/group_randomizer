@@ -26,45 +26,7 @@ $(function() {
   addPerson('Anthony');
   addPerson('Katie');
 
-  //randomizes array of names in a different order
-  function shuffle(array) {
-    var currentIndex = array.length, temporaryValue, randomIndex;
-    // While there remain elements to shuffle...
-    while (0 !== currentIndex) {
 
-      // Pick a remaining element...
-      randomIndex = Math.floor(Math.random() * currentIndex);
-      currentIndex -= 1;
-
-      // And swap it with the current element.
-      temporaryValue = array[currentIndex];
-      array[currentIndex] = array[randomIndex];
-      array[randomIndex] = temporaryValue;
-    }
-      return array;
-  }
-
-  //randomized groups, then sorts into number of groups determined
-  function sortGroups(numGroups) {
-    var tempArrayOfNames = [];
-    for (var i = 0; i < arrayOfNames.length; i++) {
-      tempArrayOfNames[i] = arrayOfNames[i]
-    }
-    shuffle(tempArrayOfNames);
-    groupArray = [];
-    for (var i = 0; i < numGroups; i++) {
-      groupArray[i] = [];
-    }
-
-    while (tempArrayOfNames.length > 0) {
-      for (var i = 0; i < numGroups; i++) {
-        if (tempArrayOfNames.length > 0) {
-          groupArray[i].push(tempArrayOfNames.shift());
-        }
-      }
-    }
-    return groupArray;
-  }
 
   // selects a button for # of groups
   $('.num-group-buttons').on('click','.button',function() {
@@ -73,7 +35,7 @@ $(function() {
   })
 
   //determines what number of groups is needed, and sorts groups and appends html
-  $('#randomize-button').on('click',function(){
+  $('.randomizer').on('click',function(){
     // switch to determine what button was selected
     switch ($('.num-group-buttons').find('.selected').attr('id')) {
       case 'group-2':
@@ -122,10 +84,51 @@ $(function() {
       }
     }
 
+    //animates stuff flying in
+    $('.group')
+      .animate({left: "0", top: '0'}, 750);
 
-
-    $('.group').animate({left: "0", top: '0'}, 1000);
   }) //end of randomize button click event
+
+  //randomized groups, then sorts into number of groups determined
+  function sortGroups(numGroups) {
+    var tempArrayOfNames = [];
+    for (var i = 0; i < arrayOfNames.length; i++) {
+      tempArrayOfNames[i] = arrayOfNames[i]
+    }
+    shuffle(tempArrayOfNames);
+    groupArray = [];
+    for (var i = 0; i < numGroups; i++) {
+      groupArray[i] = [];
+    }
+
+    while (tempArrayOfNames.length > 0) {
+      for (var i = 0; i < numGroups; i++) {
+        if (tempArrayOfNames.length > 0) {
+          groupArray[i].push(tempArrayOfNames.shift());
+        }
+      }
+    }
+    return groupArray;
+  }
+
+  //randomizes array of names in a different order
+  function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+      // Pick a remaining element...
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      // And swap it with the current element.
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
+    }
+      return array;
+  }
 
   //appends divs to DOM based on number of groups
   function addDivs(numGroups) {
@@ -134,10 +137,6 @@ $(function() {
       $('.groups').append('<div class="group" id="group' + i + '"><h1 id="groupnum' + i + '">Group ' + i + '</h1></div>');
     }
   }
-  //
-  // $('.container').on('click', function () {
-  //   $('.group').animate({left: "0", top: '0'}, 1000);
-  // })
 
 
 })

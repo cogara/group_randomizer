@@ -2,6 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  opacity: 1;
+}
+
+body {
+  background-image: url('bg-img.jpeg');
 }
 
 .container {
@@ -37,6 +42,7 @@
   box-shadow: 3px 3px 1px 1px black;
   border-radius: 5px;
   border: 1px solid rgba(0,0,0,.2);
+    background-color: rgba(220,220,220,.9);
 }
 
 .randomizer {
@@ -46,8 +52,8 @@
   margin: 10px auto;
 }
 
-.selected {
-  background-color: #DDD;
+.selected, .randomizer:active {
+  background-color: rgba(255,255,255,.95);
 }
 
 .groups div {
@@ -65,12 +71,12 @@
   flex: 0 150px;
   text-align: center;
   border-radius: 10px;
-  background-color: rgba(200,200,200,.5);
+  background-color: rgba(200,200,200,.85);
 }
 
 
 .group h1 {
-  background-color: #AAA;
+  background-color: #FFF;
   border-radius: 10px;
   padding: 5px;
   margin-bottom: 5px;
