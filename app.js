@@ -1,6 +1,8 @@
 $(function() {
   var arrayOfNames = [];
   var groupArray = [];
+  var animalNames = ['Lion','Elephant','Tiger','Juggler','Trapeezer','Clown','Sad Clown','Monkey','Ring Master','Lion Tamer','Skeletor','Lion','Elephant','Tiger','Juggler','Trapeezer','Clown','Sad Clown','Monkey','Ring Master','Lion Tamer'];
+  var randomAnimal = [];
 
   function addPerson(name) {
     arrayOfNames.push(name);
@@ -37,6 +39,7 @@ $(function() {
   //determines what number of groups is needed, and sorts groups and appends html
   $('.randomizer').on('click',function(){
     // switch to determine what button was selected
+    randomAnimal = shuffle(animalNames);
     switch ($('.num-group-buttons').find('.selected').attr('id')) {
       case 'group-2':
         sortGroups(2);
@@ -136,7 +139,7 @@ $(function() {
   function addDivs(numGroups) {
     $('.groups').empty();
     for (var i = 1; i <= numGroups; i++) {
-      $('.groups').append('<div class="group" id="group' + i + '"><h1 id="groupnum' + i + '">Group ' + i + '</h1></div>');
+      $('.groups').append('<div class="group" id="group' + i + '"><h1 id="groupnum' + i + '">' + randomAnimal[i-1] + '</h1></div>');
     }
   }
 
