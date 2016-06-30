@@ -7,13 +7,24 @@ $(function() {
   }
 
   addPerson('Connor');
-  addPerson('Brian');
+  addPerson('Brian V');
   addPerson('Donovan');
   addPerson('Cormac');
-  addPerson('abc');
-  addPerson('def');
-  addPerson('ghi');
-  addPerson('jkl');
+  addPerson('Richard');
+  addPerson('Jon');
+  addPerson('Sahasha');
+  addPerson('Tracy');
+  addPerson('Megan');
+  addPerson('Justin');
+  addPerson('Hillary');
+  addPerson('Liz');
+  addPerson('Ryan');
+  addPerson('Andrew');
+  addPerson('Kyle');
+  addPerson('Brian A');
+  addPerson('Trent');
+  addPerson('Anthony');
+  addPerson('Katie');
 
   //randomizes array of names in a different order
   function shuffle(array) {
