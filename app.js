@@ -36,6 +36,11 @@ $(function() {
     $(this).addClass('selected');
   })
 
+  // displays main list to start
+  for (var i = 0; i < arrayOfNames.length; i++) {
+    $('.names-list').append('<span class="name">' + arrayOfNames[i] + '</span> ');
+  }
+
   //determines what number of groups is needed, and sorts groups and appends html
   $('.randomizer').on('click',function(){
     // switch to determine what button was selected
